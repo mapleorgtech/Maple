@@ -1,12 +1,12 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Image from "next/image";
-import home from "../public/assets/images/home.svg";
-import bag from "../public/assets/images/bag.svg";
-import cart from "../public/assets/images/cart.svg";
-import customers from "../public/assets/images/customers.svg";
-import invoices from "../public/assets/images/invoices.svg";
-import settings from "../public/assets/images/settings.svg";
+import home from "../public/assets/images/home.js";
+import bag from "../public/assets/images/bag.js";
+import cart from "../public/assets/images/cart.js";
+import customers from "../public/assets/images/customers.js";
+import invoices from "../public/assets/images/invoices.js";
+import settings from "../public/assets/images/settings.js";
 
 const menuItems = [
 	{
@@ -30,7 +30,7 @@ const menuItems = [
 		logo: customers
 	},
 	{
-		title: "Incoices",
+		title: "Invoices",
 		href: "/",
 		logo: invoices
 	},
@@ -49,8 +49,8 @@ export default function Menu() {
 					{menuItems.map((item) => {
 						return (
 							<li>
-								<Card>
-									<Logo src={item.logo} alt='' width={22} height={22} />
+								<Card onClick={focus}>
+									<item.logo className='logo' />
 									<Title>{item.title}</Title>
 								</Card>
 							</li>
@@ -61,6 +61,15 @@ export default function Menu() {
 		</>
 	);
 }
+
+const Title = styled.p`
+	font-weight: 800;
+	color: #ffa654;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 24px;
+	text-transform: uppercase;
+`;
 
 const Card = styled.div`
 	display: flex;
@@ -75,25 +84,26 @@ const Card = styled.div`
 	cursor: pointer;
 	&:hover {
 		background: #e76f51;
+
+		${Title} {
+			color: white;
+		}
+
+        .logo {
+            path {
+                fill: white;
+            }
+        }
 	}
-`;
-
-const Logo = styled(Image)`
-	position: absolute;
-	left: 0px;
-	transform: translateX(-50%);
-	fill: #ffa654;
-`;
-
-const Title = styled.p`
-	font-weight: 800;
-	color: #ffa654;
-	font-style: normal;
-	font-size: 20px;
-	line-height: 24px;
-	text-transform: uppercase;
-	&:hover {
-		color: white;
+	.logo {
+		position: absolute;
+		left: 0px;
+		width: 22;
+		height: 22;
+		transform: translateX(-50%);
+		path {
+			fill: #ffa654;
+		}
 	}
 `;
 
