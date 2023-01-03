@@ -49,7 +49,7 @@ export default function Menu() {
 					{menuItems.map((item) => {
 						return (
 							<li>
-								<Card onClick={focus}>
+								<Card>
 									<item.logo className='logo' />
 									<Title>{item.title}</Title>
 								</Card>
