@@ -2,7 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import SignupForm from "../../components/login/signup-form";
 import Image from "next/image";
-import back from "../../public/assets/images/back_arrow.svg";
+import Back from "../../public/assets/images/back_arrow.js";
 
 export default function Signup() {
 	return (
@@ -10,7 +10,7 @@ export default function Signup() {
 			<main>
 				<Link href={"/"} style={{ textDecoration: "none" }}>
 					<BackLogin>
-						<Image src={back} alt='back to login' />
+                        <Back/> 
 						<LogInText>login</LogInText>
 					</BackLogin>
 				</Link>

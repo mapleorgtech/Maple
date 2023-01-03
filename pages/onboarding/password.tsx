@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Image from "next/image";
-import back from "../../public/assets/images/back_arrow.svg";
+import Back from "../../public/assets/images/back_arrow.js";
 import PasswordForm from "../../components/login/password-form";
 
 export default function ResetPassword() {
@@ -10,7 +10,7 @@ export default function ResetPassword() {
 			<main>
 				<Link href={"/"} style={{ textDecoration: "none" }}>
 					<BackLogin>
-						<Image src={back} alt='back to login' />
+						<Back/>
 						<LogInText>login</LogInText>
 					</BackLogin>
 				</Link>
