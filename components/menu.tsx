@@ -94,7 +94,7 @@ const UserBox = styled.div`
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    margin-top: 20px;
+    margin-top: 40px;
 `
 const Profile = styled.div`
     display: flex;
@@ -145,7 +145,6 @@ const Title = styled.p`
 	color: #ffa654;
 	font-style: normal;
 	font-size: 18px;
-	line-height: 24px;
 	text-transform: uppercase;
     cursor: none;
 `;
@@ -156,7 +155,7 @@ const Card = styled.div`
 	justify-content: center;
 	position: relative;
 	align-items: center;
-	padding: 10px 40px;
+	padding: 0px 40px;
 	background: #404040;
 	border-radius: 5.5px;
 	
@@ -207,4 +206,5 @@ const Wrapper = styled.div`
 	top: 0px;
 	margin-top: 150px;
     margin-bottom: 20px;
+    padding: 40px 0px;
 `;
