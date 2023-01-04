@@ -7,6 +7,7 @@ import cart from "../public/assets/images/cart.js";
 import customers from "../public/assets/images/customers.js";
 import invoices from "../public/assets/images/invoices.js";
 import settings from "../public/assets/images/settings.js";
+import profileLogo from "../public/assets/images/profile.js"
 
 const menuItems = [
 	{
@@ -25,7 +26,7 @@ const menuItems = [
 		logo: cart
 	},
 	{
-		title: "Customer List",
+		title: "Customers",
 		href: "/",
 		logo: customers
 	},
@@ -45,14 +46,25 @@ export default function Menu() {
 	return (
 		<>
 			<Wrapper>
-				<ul>
+                <UserBox>
+                    <Profile>
+                        <ProfileLogo/>
+                        <Name>Ramesh Gupta</Name>                        
+                    </Profile>
+                    <Role>Distributor</Role>
+                </UserBox>
+                <ul>
 					{menuItems.map((item) => {
 						return (
 							<li>
-								<Card>
-									<item.logo className='logo' />
-									<Title>{item.title}</Title>
-								</Card>
+                                <CardContainer>
+                                    <CardDivider/>
+                                    <Card>
+                                        <item.logo className='logo' />
+                                        <Title>{item.title}</Title>
+                                    </Card>
+                                </CardContainer>
+                                <Divider/>
 							</li>
 						);
 					})}
@@ -62,6 +74,72 @@ export default function Menu() {
 	);
 }
 
+const CardContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`
+
+const CardDivider = styled.hr`
+    position: absolute;
+    height: 1px;
+    width: 15px;
+    left: 0px;
+    align-self: center;
+    background: #D9D9D9;
+`
+
+const UserBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 20px;
+`
+const Profile = styled.div`
+    display: flex;
+    width: 100%;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    height: min-content;
+    background: #2A9D8F;
+`
+const Name = styled.span`
+    font-family: 'Sen';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 5.5px;
+    width: auto;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    color: #FFFFFF;
+    text-align: right;
+    text-transform: uppercase;
+`
+const ProfileLogo = styled(profileLogo)`
+    left: 0px;
+    z-index: 1;
+    position: absolute;
+`
+const Role = styled.p`
+    font-family: 'Sen';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    padding-right: 5px;
+    color: #FFFFFF;
+    max-width: 100%;
+    display: inline-block;
+    position: relative;
+    text-align: right;
+    text-transform: uppercase;
+`
+
 const Title = styled.p`
 	font-weight: 800;
 	color: #ffa654;
@@ -69,6 +147,7 @@ const Title = styled.p`
 	font-size: 18px;
 	line-height: 24px;
 	text-transform: uppercase;
+    cursor: none;
 `;
 
 const Card = styled.div`
@@ -80,13 +159,14 @@ const Card = styled.div`
 	padding: 10px 40px;
 	background: #404040;
 	border-radius: 5.5px;
-	margin-top: 20px;
+	
 	cursor: pointer;
 	&:hover {
 		background: #e76f51;
 
 		${Title} {
 			color: white;
+            font-weight: bolder;
 		}
 
         .logo {
@@ -107,6 +187,13 @@ const Card = styled.div`
 	}
 `;
 
+const Divider = styled.hr`
+    height: 1px;
+    background: #D9D9D9;
+    margin-top: 10px;
+    margin-bottom: 20px;
+`
+
 const Wrapper = styled.div`
 	display: flex;
 	width: min-content;
@@ -114,10 +201,10 @@ const Wrapper = styled.div`
 	flex-direction: column;
 	background: #264653;
 	border-radius: 22px;
-	justify-content: space-evenly;
-	height: auto;
+	justify-content: center;
+	height: fit-content;
 	bottom: 0px;
 	top: 0px;
-	margin-bottom: 50px;
 	margin-top: 150px;
+    margin-bottom: 20px;
 `;
