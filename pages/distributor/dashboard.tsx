@@ -28,10 +28,11 @@ const Backdrop = styled.div`
 `
 
 const Container = styled.div`
-    width: fit-content;
+    width: 100%;
+    background: black;
     height: max-content;
     display: flex;
-    background: black;
+    padding-top: 150px;
     flex-direction: row;
     justify-content: space-around;
 `

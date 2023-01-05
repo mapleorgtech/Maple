@@ -104,6 +104,7 @@ const CardContainer = styled.div`
 	flex-direction: column;
     width: 90%;
     margin-left: 25px;
+    position: absolute;
 	justify-content: center;
 `;
 
