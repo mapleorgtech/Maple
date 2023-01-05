@@ -7,11 +7,9 @@ const NavBar = () => {
 	return (
 		<Header>
 			<Link href={"/"} legacyBehavior>
-				<a>
-					<Container>
-						<Logo width={1000} height={1000} src={logo} alt='Logo' />
-					</Container>
-				</a>
+				<Container>
+					<Logo width={1000} height={1000} src={logo} alt='Logo' />
+				</Container>
 			</Link>
 			<Title></Title>
 		</Header>
@@ -48,7 +46,7 @@ const Header = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	position: absolute;
+	position: fixed;
 	width: 98%;
 	right: 0px;
 	height: auto;
