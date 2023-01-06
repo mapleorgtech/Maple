@@ -28,8 +28,7 @@ const Backdrop = styled.div`
 `
 
 const Container = styled.div`
-    width: 100%;
-    background: black;
+    width: fit-content;
     height: max-content;
     display: flex;
     padding-top: 150px;
