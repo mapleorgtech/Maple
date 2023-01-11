@@ -184,11 +184,14 @@ const Card = styled.div`
 	padding: 0px 40px;
 	background: #404040;
 	border-radius: 5.5px;
+    border: 1px solid #404040;
 	cursor: pointer;
 	&:hover {
 		background: #e76f51;
-
+        border: 1px solid white;
+        
 		${Title} {
+            cursor: pointer;
 			color: white;
 			font-weight: bolder;
 		}

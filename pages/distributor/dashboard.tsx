@@ -8,10 +8,9 @@ export default function Dashboard() {
 		<Container>
 			<Navbar />
 			<BackdropOne>
-				<LatestOrderStatus />
+				<LatestOrderStatus status={"undefined"}/>
 			</BackdropOne>
 			<BackdropTwo>
-				<LatestOrderStatus />
 			</BackdropTwo>
 		</Container>
 	);
@@ -29,7 +28,8 @@ const BackdropOne = styled.div`
 	backdrop-filter: blur(2.5px);
 	border-radius: 15px;
     margin: 0px 20px 0px 20px;
-	flex-grow: 1;
+    padding: 20px;
+    width: fit-content;
 `;
 
 const BackdropTwo = styled.div`
@@ -43,7 +43,8 @@ const BackdropTwo = styled.div`
 
 const Container = styled.div`
 	width: 100%;
-	height: max-content;
+	height: 100%;
+    scroll-behavior: smooth;
 	display: flex;
 	padding-top: 150px;
 	align-items: stretch;

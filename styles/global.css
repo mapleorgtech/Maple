@@ -1,11 +1,14 @@
 body {
     background-color: #f7f7f7;
+}
+
+p {
     font-family: 'Sen';
     font-style: normal;
-    font-weight: 800;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
+    user-select: none;
 }
 
 button {
